@@ -1,0 +1,16 @@
+<div class="articles">
+  <div class="container">
+    
+    <% @articles.each do |article| %>
+    <div class="article">
+      <p class="date"><%= article.created_at.strftime('%b %d') %></p>
+      <!-- http://stackoverflow.com/questions/1086360/how-do-i-wrap-link-to-around-some-html-ruby-code -->
+      <%= link_to(article) do %>
+        <h2><%= article.title %></h2>
+      <% end %>
+      <p class="author">by <%= article.author %></p>
+      <p class="article_content"><%= truncate(article.body , :length => 140) %></p>
+    </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="new-article">
+  <div class="container">
+
+    <%= form_for(@article) do |f| %>    
+      <%= f.text_field :title %>
+      <%= f.text_field :author %>
+      <%= f.text_area :body %>
+
+      <%= f.submit "Save" %>
+    <% end %>
+  </div>
+</div>
