@@ -1,0 +1,19 @@
+<div class="login">
+  <div class="container">
+    
+    <!-- Your form here -->
+    <%= form_for(@user) do |f| %>
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+    
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+    
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+    
+      <%= f.submit "Update my account" %>
+    <% end %>
+
+  </div>
+</div>
