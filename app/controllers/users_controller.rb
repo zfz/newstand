@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :require_user
+
   def new
     @user = User.new
   end
@@ -10,6 +12,16 @@ class UsersController < ApplicationController
     else
       redirect_to sign_up_path
     end
+  end
+
+  def show
+    @user = User.find_by(params[:id])
+  end
+
+  def update
+    @user = User.find_by(params[:id])
+    @user.update_attributes(user_params)
+    redirect_to user_path
   end
   
   private
