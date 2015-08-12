@@ -6,7 +6,11 @@
     <p class="article_content"><%= @article.body %></p>
 
     <!-- Your code here -->
-
+    <% if current_user.author? %>  
+      <%= link_to "Edit", edit_article_path(@article.id) %></li> 
+      <%= link_to 'Destroy', article_path(@article.id),
+          method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
     
   </div>
 </div>
